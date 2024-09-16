@@ -56,4 +56,4 @@ Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
 
 ## Contacto
 
-Para cualquier consulta, por favor contacta a [tu-email@dominio.com](mailto:tu-email@dominio.com).
+Para cualquier consulta, por favor contacta a [poketoribio@hotmail.com](mailto:poketoribio@hotmail.com).
