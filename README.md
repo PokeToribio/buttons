@@ -1,11 +1,11 @@
-# Discord Bot - Roxy Migurdia
+# Discord Bot - Buttons
 
-Este repositorio contiene el código para un bot de Discord llamado Roxy Migurdia. El bot utiliza la biblioteca `discord.js` y soporta comandos slash y botones interactivos. Está diseñado para ser modular, permitiendo añadir comandos y manejar interacciones de manera organizada.
+Este repositorio contiene el código para un bot de Discord llamado **Buttons**. El bot demuestra cómo trabajar con botones interactivos utilizando la biblioteca `discord.js`. El ejemplo muestra cómo crear comandos slash y manejar interacciones de botones de manera modular y organizada.
 
 ## Estructura del Proyecto
 
-- **`/commands`**: Contiene los comandos del bot organizados en subcarpetas por categoría.
-- **`/executes`**: Contiene los manejadores de interacciones, como botones.
+- **`/commands`**: Contiene los comandos del bot organizados en subcarpetas por categoría. En este ejemplo, hay una carpeta `bot` con un comando de ejemplo.
+- **`/executes`**: Contiene los manejadores de interacciones, como los botones. En este ejemplo, hay archivos `button1.js` y `button2.js`.
 - **`/events`**: Contiene los eventos de Discord, como el evento `ready`.
 - **`/utils`**: Contiene utilidades como el script para registrar comandos (`deploycommands.js`).
 - **`.env`**: Archivo para variables de entorno (asegúrate de no subirlo a repositorios públicos).
@@ -16,8 +16,8 @@ Este repositorio contiene el código para un bot de Discord llamado Roxy Migurdi
 
 1. Clona este repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/tu-repositorio.git
-    cd tu-repositorio
+    git clone https://github.com/tu-usuario/buttons.git
+    cd buttons
     ```
 
 2. Instala las dependencias:
@@ -41,6 +41,10 @@ Este repositorio contiene el código para un bot de Discord llamado Roxy Migurdi
     ```bash
     npm start
     ```
+
+## Ejemplo
+
+El bot está configurado para manejar botones interactivos. Cuando se ejecuta el comando de ejemplo, el bot envía un mensaje con botones que, al ser presionados, ejecutan diferentes acciones.
 
 ## Contribución
 
