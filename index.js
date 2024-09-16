@@ -1,10 +1,12 @@
 require('dotenv').config();
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Collection, REST, Routes } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
-// Leer el token desde el archivo .env
+// Leer el token y el cliente ID desde el archivo .env
 const token = process.env.TOKEN;
+const clientId = process.env.CLIENT_ID; // Añade tu CLIENT_ID aquí
+const guildId = process.env.GUILD_ID;   // Añade tu GUILD_ID aquí
 
 // Crear el cliente con los intents necesarios
 const client = new Client({
@@ -60,5 +62,40 @@ const loadEvents = () => {
 };
 loadEvents();
 
-// Iniciar sesión
+// Registrar comandos
+const registerCommands = async () => {
+    const commands = [];
+    const commandFolders = fs.readdirSync(path.join(__dirname, 'commands'));
+
+    commandFolders.forEach(folder => {
+        const commandFiles = fs.readdirSync(path.join(__dirname, 'commands', folder))
+            .filter(file => file.endsWith('.js'));
+
+        commandFiles.forEach(file => {
+            const command = require(path.join(__dirname, 'commands', folder, file));
+            commands.push(command.data.toJSON());
+        });
+    });
+
+    const rest = new REST({ version: '10' }).setToken(token);
+
+    try {
+        console.log('Iniciando la actualización de comandos...');
+
+        await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
+            body: commands,
+        });
+
+        console.log('Comandos registrados correctamente.');
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+// Iniciar sesión y registrar comandos
+client.once('ready', async () => {
+    await registerCommands();
+    console.log(`¡${client.user.tag} está listo!`);
+});
+
 client.login(token);
