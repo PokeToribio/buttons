@@ -1,0 +1,14 @@
+{
+  "name": "your-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "deploy-commands": "node utils/deploycommands.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "@discordjs/builders": "^0.14.0"
+  }
+}
