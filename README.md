@@ -16,7 +16,7 @@ Este repositorio contiene el código para un bot de Discord llamado **Buttons**.
 
 1. Clona este repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/buttons.git
+    git clone https://github.com/PokeToribio/buttons.git
     cd buttons
     ```
 
